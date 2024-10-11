@@ -79,7 +79,7 @@ main > div {
 main {
     position: relative;
 }
-#start {
+#start-note-application {
     text-decoration: none;
     animation-name: changeColor;
     animation-duration: 2s;
@@ -104,7 +104,7 @@ main {
     filter: grayscale(50%);
     transition: .3s;
   }
-  #start:hover {
+  #start-note-application:hover {
     --_p: 75%;
     filter: grayscale(0%);
     box-shadow: 0px 0px 10px 2px white;

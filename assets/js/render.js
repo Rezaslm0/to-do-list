@@ -17,3 +17,18 @@ export function showAllNotes(){
     });
 
 }
+
+export function noteApplication(){
+    // 1) Fill out index.html
+    document.body.innerHTML = htmlTemplate.noteIndexTemplate()
+
+    // 2) Fill out css
+    document.getElementById('page-style').setAttribute('href', './assets/css/main.css')
+
+    // 3) Fill out listeners
+    // Add event listener for the form submission.
+    document.getElementById('note-button').addEventListener('click', noteController.addNewNote)
+    // If there is any data, display it.
+    document.addEventListener('DOMContentLoaded', render.showAllNotes)
+
+}

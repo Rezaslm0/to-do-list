@@ -12,6 +12,7 @@ export function add(LS_name, value){
     localStorage.setItem(LS_name, JSON.stringify(ls))
 
 }
+
 export function get(LS_name){
     // 0) Check the local-storage
     storageValidation(LS_name)
@@ -20,6 +21,7 @@ export function get(LS_name){
     return JSON.parse(localStorage.getItem(LS_name))
 
 }
+
 function storageValidation(LS_name){
     // 1) Get content of local-storage
     const ls = localStorage.getItem(LS_name)

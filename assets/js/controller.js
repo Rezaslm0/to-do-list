@@ -24,3 +24,8 @@ export function addNewNote(){
     render.showAllNotes()
     console.log('valid')
 }
+
+export function openNoteApplication(){
+    render.noteApplication()
+
+}
