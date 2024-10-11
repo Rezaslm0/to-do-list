@@ -1,8 +1,10 @@
+import { listOfNote, newNoteBTN, newNoteValue } from "./static.js";
+
 export function noteTemplate(note){
     return `
         <li id="${note.id}">
-            <div class="note-title">${note.title}</div>
-            <div class="note-value">${note.note}</div>
+            <div class="note-value">${note.value}</div>
+            <input type="checkbox" id="note-checkbox" name="Check" />
         </li>
     `;
 }
@@ -14,8 +16,8 @@ export function noteIndexTemplate(){
             <div class="task-input-container">
                 <h1>Add a Task</h1>
                 <div class="task-input">
-                    <input type="text" id="new-task" placeholder="Add a new task...">
-                    <button id="add-task-btn">Add Task</button>
+                    <input type="text" id="${newNoteValue}" placeholder="Add a new task...">
+                    <button id="${newNoteBTN}">Add Task</button>
                 </div>
             </div>
 
@@ -29,7 +31,7 @@ export function noteIndexTemplate(){
                     <button class="filter-btn" data-filter="completed">Completed</button>
                 </div>
                 <!-- Task List -->
-                <ul id="task-list">
+                <ul id="${listOfNote}">
                     <!-- Tasks will be dynamically added here -->
                 </ul>
             </div>
