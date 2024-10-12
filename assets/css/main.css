@@ -5,7 +5,7 @@
 }
 body {
     font-family: Arial, sans-serif;
-    background: linear-gradient(to bottom right, #4a90e2, #007acc);
+    background: linear-gradient(#4396f6, #85cbf9);
     display: flex;
     justify-content: center;
     align-items: center;
