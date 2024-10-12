@@ -2,11 +2,21 @@ import { listOfNote, newNoteBTN, newNoteValue } from "./static.js";
 
 export function noteTemplate(note){
     return `
+        <li class="task-item" id"${note.id}">
+            <span>${note.value}</span>
+            <div class="task-buttons">
+                <button>✔️</button>
+                <button>❌</button>
+            </div>
+        </li>
+    `;
+
+    /* Old template
         <li id="${note.id}">
             <div class="note-value">${note.value}</div>
             <input type="checkbox" id="note-checkbox" name="Check" />
         </li>
-    `;
+    */
 }
 
 export function noteIndexTemplate(){
