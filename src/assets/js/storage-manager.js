@@ -42,7 +42,7 @@ export function storageManager_remove(LS_name, id){
     storageManager_storageValidation(LS_name)
 
     // 1) GEt all data from local-storage
-    const ls = get(LS_name)
+    const ls = storageManager_get(LS_name)
 
     // 2) 
     ls.forEach(
