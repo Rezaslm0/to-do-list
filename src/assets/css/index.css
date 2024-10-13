@@ -47,7 +47,7 @@ header span {
 }
 @font-face {
     font-family: Alegraya;
-    src: url(/assets/font/Alegreya/Alegreya-Regular.ttf);
+    src: url(./../font/Alegreya/Alegreya-Regular.ttf);
 }
 #title {
     color: white;
@@ -78,7 +78,7 @@ main > div {
 main {
     position: relative;
 }
-#start-note-application {
+#start-task-manger-button {
     text-decoration: none;
     animation-name: changeColor;
     animation-duration: 2s;
@@ -103,7 +103,7 @@ main {
     filter: grayscale(50%);
     transition: .3s;
   }
-  #start-note-application:hover {
+  #start-task-manger-button:hover {
     --_p: 75%;
     filter: grayscale(0%);
     box-shadow: 0px 0px 10px 2px white;
