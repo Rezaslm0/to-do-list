@@ -1,18 +1,18 @@
 import * as storageManager from "./storage-manager.js";
 import { idGenerator } from "./unique-identifier.js";
-import { LS_notes, newNoteValue } from "./static.js";
+import { LS_notes, newNoteValue, newNoteBTN } from "./static.js";
 import * as render from "./render.js";
 
 export function addNewNote(){
     // 1) Get values from user inputs fields
-    const noteText = document.getElementById(newNoteValue).value;
+    const tagInput = document.getElementById(newNoteValue);
 
     //TODO 2) Validation data
     // code ...
 
     // 3) Set up valid value to store in local-storage
     const noteData = {
-        value: noteText,
+        value: tagInput.value,
         id: idGenerator()
     }
 
@@ -21,10 +21,92 @@ export function addNewNote(){
 
     // 5) Show all data in html content
     render.showAllNotes()
-    console.log('valid')
+
+    // 6) Empty it
+    tagInput.value = '';
 }
 
 export function openNoteApplication(){
     render.noteApplication()
 
+}
+
+export function removeTask(e){
+    // 1) Get Id of task
+    const taskID = Number(e.target.parentNode.parentNode.id)
+
+    // 2) Remove it from local-storage
+    storageManager.remove(LS_notes, Number(taskID))
+
+    // 3) Remove it from html content
+    render.showAllNotes()
+}
+
+export function toggleTaskCompletion(e){
+    // 1) Get Id of task
+    const taskElement = e.target.parentNode.parentNode
+
+    // 2) Toggle class to change style
+    taskElement.classList.toggle('completed');
+
+}
+
+export function setTaskListener(){
+    let elements
+
+    // A) X - Remove BTNs
+    elements = document.getElementsByClassName("btn-remove");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', removeTask);
+
+    }
+
+    // B) Done BTNs
+    elements = document.getElementsByClassName("btn-done");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener('click', toggleTaskCompletion);
+
+    }
+}
+
+export function addNoteApplicationListeners(){
+    // A) Add event listener for the form Add new note
+    document.getElementById(newNoteBTN).addEventListener('click', addNewNote);
+    
+    // B) Task BTNs
+    setTaskListener()
+
+    // C) Filters
+    document.querySelectorAll('.filter-btn').forEach( function(btn){
+        btn.addEventListener('click', taskFiltering);
+
+    })
+
+}
+
+function taskFiltering() {
+    const filter = this.getAttribute('data-filter');
+    const tasks = document.querySelectorAll('.task-item');
+    
+    tasks.forEach(task => {
+        switch (filter) {
+            case 'all':
+                task.style.display = 'flex';
+                break;
+            case 'active':
+                task.style.display = task.classList.contains('completed') ? 'none' : 'flex';
+                break;
+                case 'completed':
+                    task.style.display = task.classList.contains('completed') ? 'flex' : 'none';
+                break;
+            }
+    });
+    
+
+    document.querySelectorAll('.filter-btn').forEach( function(btn){
+        btn.classList.remove("active");
+        
+    })
+    
+    this.classList.add("active");
 }

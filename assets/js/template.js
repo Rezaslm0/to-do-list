@@ -2,11 +2,11 @@ import { listOfNote, newNoteBTN, newNoteValue } from "./static.js";
 
 export function noteTemplate(note){
     return `
-        <li class="task-item" id"${note.id}">
+        <li class="task-item" id="${note.id}">
             <span>${note.value}</span>
             <div class="task-buttons">
-                <button>✔️</button>
-                <button>❌</button>
+                <button class="btn-done">✔️</button>
+                <button class="btn-remove">❌</button>
             </div>
         </li>
     `;

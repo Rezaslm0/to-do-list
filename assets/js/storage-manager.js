@@ -22,6 +22,26 @@ export function get(LS_name){
 
 }
 
+export function remove(LS_name, id){
+    // 1) GEt all data from local-storage
+    const ls = get(LS_name)
+
+    // 2) 
+    ls.forEach(
+        function(eachTask, indexNumber){
+            if (eachTask.id === id){
+                ls.splice(indexNumber, 1)
+                return
+
+            }
+        }
+    );
+
+    // 3) Send data to local-storage
+    localStorage.setItem(LS_name, JSON.stringify(ls))
+
+}
+
 function storageValidation(LS_name){
     // 1) Get content of local-storage
     const ls = localStorage.getItem(LS_name)

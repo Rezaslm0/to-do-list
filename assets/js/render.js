@@ -18,6 +18,8 @@ export function showAllNotes(){
         
     });
 
+    // 4) Set task Listener
+    noteController.setTaskListener()
 }
 
 export function noteApplication(){
@@ -27,11 +29,9 @@ export function noteApplication(){
     // 2) Fill out css
     document.getElementById('page-style').setAttribute('href', './assets/css/main.css')
 
-    // 3) Fill out listeners
-    // Add event listener for the form submission.
-    document.getElementById(newNoteBTN).addEventListener('click', noteController.addNewNote)
-
-    // 4) If there is any data, display it.
+    // 3) If there is any data, display it.
     render.showAllNotes()
 
+    // 4) Active listeners
+    noteController.addNoteApplicationListeners()
 }
