@@ -35,3 +35,30 @@ export function noteApplication(){
     // 4) Active listeners
     noteController.addNoteApplicationListeners()
 }
+
+export function taskFiltering() {
+    const filter = this.getAttribute('data-filter');
+    const tasks = document.querySelectorAll('.task-item');
+    
+    tasks.forEach(task => {
+        switch (filter) {
+            case 'all':
+                task.style.display = 'flex';
+                break;
+            case 'active':
+                task.style.display = task.classList.contains('completed') ? 'none' : 'flex';
+                break;
+                case 'completed':
+                    task.style.display = task.classList.contains('completed') ? 'flex' : 'none';
+                break;
+            }
+    });
+    
+
+    document.querySelectorAll('.filter-btn').forEach( function(btn){
+        btn.classList.remove("active");
+        
+    })
+    
+    this.classList.add("active");
+}
