@@ -119,6 +119,9 @@ export function template_taskManager(){
                     <button class="filter-btn active" data-filter="all">All</button>
                     <button class="filter-btn" data-filter="active">Active</button>
                     <button class="filter-btn" data-filter="completed">Completed</button>
+                    <button class="filter-btn active allBtn" data-filter="all">All</button>
+                    <button class="filter-btn activeBtn" data-filter="active">Active</button>
+                    <button class="filter-btn completedBtn" data-filter="completed">Completed</button>
                 </div>
                 <!-- Task List -->
                 <ul id="${application.taskManager.id.ul.listOfTasks}">
