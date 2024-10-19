@@ -107,7 +107,6 @@ export function template_taskManager(){
                 <h1>Add a Task</h1>
                 <div class="task-input">
                     <input type="text" id="${application.taskManager.id.input.taskValue}" placeholder="Add a new task...">
-                    <button id="${application.taskManager.id.button.addTask}">Add Task</button>
                     <button id="${application.taskManager.id.button.addTask}" class="Taskbutton">Add Task</button>
                 </div>
             </div>
@@ -117,9 +116,6 @@ export function template_taskManager(){
                 <h2>Your Tasks</h2>
                 <!-- Filter Section -->
                 <div class="filters">
-                    <button class="filter-btn active" data-filter="all">All</button>
-                    <button class="filter-btn" data-filter="active">Active</button>
-                    <button class="filter-btn" data-filter="completed">Completed</button>
                     <button class="filter-btn active allBtn" data-filter="all">All</button>
                     <button class="filter-btn activeBtn" data-filter="active">Active</button>
                     <button class="filter-btn completedBtn" data-filter="completed">Completed</button>
