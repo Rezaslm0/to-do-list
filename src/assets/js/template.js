@@ -108,6 +108,7 @@ export function template_taskManager(){
                 <div class="task-input">
                     <input type="text" id="${application.taskManager.id.input.taskValue}" placeholder="Add a new task...">
                     <button id="${application.taskManager.id.button.addTask}">Add Task</button>
+                    <button id="${application.taskManager.id.button.addTask}" class="Taskbutton">Add Task</button>
                 </div>
             </div>
 
