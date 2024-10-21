@@ -140,3 +140,94 @@ ul::-webkit-scrollbar-thumb {
 .task-buttons button:hover {
     color: #32CD32;
 }
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Raleway', sans-serif;
+}
+
+.Taskbutton{
+  padding: 25px 30px;
+  background-color: #050801;
+  color: #03e9f4;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  letter-spacing: 4px;
+  overflow: hidden;
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+.Taskbutton:hover{
+    background: #03f453;
+    color: #050801;
+    box-shadow: 0 0 5px #08a73d,
+                0 0 25px #08a73d,
+                0 0 50px #08a73d,
+                0 0 200px #08a73d;
+    
+}
+.allBtn:hover{
+    background: #bbe66c;
+    color: #050801;
+    box-shadow: 0 0 5px #bbe66c,
+                0 0 25px #bbe66c,
+                0 0 50px #bbe66c,
+               
+}
+
+.allBtn{
+    padding: 25px 30px;
+    background-color: #64a7e3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+  }
+.activeBtn {
+    padding: 25px 30px;
+    background-color: #64a7e3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.activeBtn:hover{
+    background: #09b2be;
+    color: #050801;
+    box-shadow: 0 0 5px #09b2be,
+                0 0 25px #09b2be,
+                0 0 50px #09b2be,
+               
+}
+.completedBtn {
+    padding: 25px 30px;
+    background-color: #64a7e3;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    letter-spacing: 4px;
+    overflow: hidden;
+    transition: 0.5s;
+    cursor: pointer;
+}
+.completedBtn:hover {
+    background: #09be45;
+    color: #050801;
+    box-shadow: 0 0 5px #09be45,
+                0 0 25px #09be45,
+                0 0 50p
+}
